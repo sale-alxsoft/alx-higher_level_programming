@@ -6,7 +6,7 @@ def uppercase(str):
             i = 65
             for j in range(97, 123):
                 if (j == x_ord):
-                    print(chr(i), end="")
+                    print("{}".format(chr(i)), end="")
                 i += 1
         else:
             print(x, end="")

@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 def uppercase(str):
-    for x in str:
-        x_ord = ord(x)
-        if (x_ord >= 97 and x_ord < 123):
-            i = 65
-            for j in range(97, 123):
-                if (j == x_ord):
-                    print("{}".format(chr(i)), end="")
-                i += 1
-        else:
-            print(x, end="")
-    print('')
+    len_str = len(str)
+    temp = list(str)
+    for i in range(len_str):
+        low_ord = ord(str[i])
+        if (low_ord > 96):
+            upp_ord = low_ord - 32
+            temp[i] = chr(upp_ord)
+    print("{}".format("".join(temp)))

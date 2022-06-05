@@ -27,9 +27,8 @@ int is_palindrome(listint_t **head)
 		}
 		last_node = temp;
 		list = list->next;
+		if (list->n != last_node->n)
+			return (0);
 	}
-
-	if (list->n != last_node->n)
-		return (0);
 	return (1);
 }

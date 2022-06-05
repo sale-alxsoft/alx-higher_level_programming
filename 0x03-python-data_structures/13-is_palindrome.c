@@ -16,8 +16,7 @@ int is_palindrome(listint_t **head)
 	while (last_node->next != NULL)
 		last_node = last_node->next;
 
-	temp = *head;
-	while (list->next != NULL)
+	while (list->next != last_node->next)
 	{
 		temp = *head;
 		if (list->n != last_node->n)
@@ -29,5 +28,8 @@ int is_palindrome(listint_t **head)
 		last_node = temp;
 		list = list->next;
 	}
+
+	if (list->n != last_node->n)
+		return (0);
 	return (1);
 }

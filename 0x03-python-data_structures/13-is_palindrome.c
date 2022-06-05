@@ -15,20 +15,24 @@ int is_palindrome(listint_t **head)
 	last_node = *head;
 	while (last_node->next != NULL)
 		last_node = last_node->next;
-
-	while (list->next != last_node->next)
+	while (list->next != NULL)
 	{
 		temp = *head;
-		if (list->n != last_node->n)
-			return (0);
-		while (temp->next != last_node)
+		if (list != last_node)
 		{
-			temp = temp->next;
+			if (list->n != last_node->n)
+				return (0);
+			while (temp->next != last_node)
+			{
+				temp = temp->next;
+			}
+			last_node = temp;
+			list = list->next;
 		}
-		last_node = temp;
-		list = list->next;
-		if (list->n != last_node->n)
-			return (0);
+		else
+		{
+			list->next = NULL;
+		}
 	}
 	return (1);
 }

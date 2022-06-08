@@ -4,7 +4,7 @@ def best_score(a_dictionary):
         return None
     if len(a_dictionary) == 0:
         return None
-    for i in a_dictionary.values():
+    for i in a_dictionary.values() or not isinstance(a_dictionary, dict):
         if type(i) != int:
             return None
     values = list(a_dictionary.values())

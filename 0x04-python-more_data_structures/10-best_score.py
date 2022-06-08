@@ -4,6 +4,9 @@ def best_score(a_dictionary):
         return None
     if len(a_dictionary) == 0:
         return None
+    for i in a_dictionary.values():
+        if type(i) != int:
+            return None
     values = list(a_dictionary.values())
     keys = list(a_dictionary.keys())
     max_val = values[0]
